@@ -5,7 +5,8 @@ from contextlib import asynccontextmanager
 import aio_pika
 from fastapi import Depends, FastAPI, HTTPException, Request, status
 from pydantic import BaseModel
-from sqlalchemy.ext.asyncio import AsyncSession, select
+from sqlalchemy import select
+from sqlalchemy.ext.asyncio import AsyncSession
 from app.mq import connect_with_retry
 
 from app.db import SessionLocal, TaskRecord, init_db
